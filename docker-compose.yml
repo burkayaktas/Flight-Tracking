@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+    restart: always
+    image: docker.io/tianyuliang/app:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=db
+ 
+    depends_on:
+      - db
+    volumes:
+      - media_volume:/app/media
+      - static_volume:/app/static
+
+
+  db:
+    image: postgres:12-alpine
+    restart: always
+    container_name: "postgres_db"
+    ports:
+      - "54320:5432"
+    environment:
+      POSTGRES_DB: flight-api
+      POSTGRES_USER: gozen
+      POSTGRES_PASSWORD: deneme
+    volumes:
+      - my_dbdata:/var/lib/postgresql/data
+
+volumes:
+  my_dbdata:
+  media_volume:
+  static_volume:

@@ -1,0 +1,14 @@
+boto3==1.17.1
+Django==3.1.5
+django-import-export==2.5.0
+django-jazzmin==2.4.7
+django-measurement==3.2.3
+django-cors-headers==3.6.0
+django-modeltranslation==0.16.1
+djangorestframework==3.12.2
+djangorestframework-simplejwt==4.6.0
+drf-yasg==1.20.0
+daphne==3.0.1
+fcm-django==0.3.10
+Pillow==8.2.0
+psycopg2-binary==2.8.6
